@@ -1,20 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import header from './components/header'
-import footer from './components/footer'
+import React from 'react';
+import Header from './components/Header.jsx'
+import Footer from './components/Footer.jsx'
+import headerlogo from './assets/headerlogo.png'
 
-function App() {
+const App = () => {
   return (
-      <div>
-          <Header />   {/* Use the Header component */}
-          <main>
-              <h2>This is the content for the Component Assignment</h2>
-              {/* Add more components as needed */}
-          </main>
-          <Footer />   {/* Use the Footer component */}
-      </div>
-  );
+    <div>
+      <Header image={headerlogo} title="Welcome to product page!"></Header>
+    <p>other things here</p>
+    <Footer />
+    </div>
+  )
 }
 
 export default App;
