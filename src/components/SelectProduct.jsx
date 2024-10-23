@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 
-
 const productNames = ['Product A', 'Product B', 'Product C', 'Product D', ]
 const productPrices = [10, 20, 30, 40]
 
-const ProductSelector = () => {
+const SelectProduct = () => {
     const [selectedIndex, setSelectedIndex] = useState(0)
     const [quantity, setQuantity] = useState(0)
 
@@ -25,14 +24,15 @@ const ProductSelector = () => {
     }
 
 
-    // Calculate total price based on selected product and quantity
+    //calculate total price
   const totalPrice = productPrices[selectedIndex] * quantity;
 
   return (
     <div>
-      <h2>Product Selector</h2>
+      <h2>Select Product</h2>
 
-      <label>Select a Product:</label>
+      {/*dropdown menu part*/}
+      <label>Product:</label>
       <select value={selectedIndex} onChange={handleProductChange}>
         {productNames.map((name, index) => (
           <option key={index} value={index}>
@@ -41,13 +41,15 @@ const ProductSelector = () => {
         ))}
       </select>
 
+      {/*quantity counter*/}
       <div>
+      <label>Quantity:</label>
         <button onClick={decreaseQuantity}>-</button>
         <span>{quantity}</span>
         <button onClick={increaseQuantity}>+</button>
       </div>
 
-      {/* Order Info Table */}
+      {/*order info*/}
       <h3>Order Information</h3>
       <table>
         <thead>
@@ -71,4 +73,4 @@ const ProductSelector = () => {
   )
 }
 
-export default ProductSelector;
+export default SelectProduct;
