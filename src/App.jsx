@@ -1,15 +1,22 @@
 import React from 'react'
-import Data from './opendata/Dataview'
+import ApiList from './components/ApiList.jsx'
+import './index.css'
 
 function App() {
-    return (
-        <div>
-            <main>
-                <h2>Open Data Assignment</h2>
-                <DataView />  {/* Use the DataView component to show data */}
-            </main>
-        </div>
-    );
+  const [searchTerm, setSearchTerm] = useState('');
+
+  return (
+    <div className="container">
+      <h1>Meal Finder</h1>
+      <input
+        type="text"
+        placeholder="Search for a meal..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+      <ApiList searchTerm={searchTerm} />
+    </div>
+  );
 }
 
 export default App;
