@@ -1,9 +1,9 @@
-import React from 'react'
-import ApiList from './components/ApiList.jsx'
+import React, { useState } from 'react'
+import ApiList from './components/ApiList'
 import './index.css'
 
 function App() {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState('')
 
   return (
     <div className="container">
@@ -16,7 +16,7 @@ function App() {
       />
       <ApiList searchTerm={searchTerm} />
     </div>
-  );
+  )
 }
 
 export default App;
